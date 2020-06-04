@@ -1,0 +1,2 @@
+include ':updaterLib'
+include ':app'

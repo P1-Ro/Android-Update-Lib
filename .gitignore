@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/exoplayerhelper/build
+/captures
+.externalNativeBuild
+app/not
+app/release
+\.idea/vcs\.xml
