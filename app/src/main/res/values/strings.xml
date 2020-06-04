@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="update_url"/>
+    <string name="update_api_key"/>
+
     <string name="update_check">Checking updates</string>
     <string name="update_wait_please">This can take a while…</string>
     <string name="update_version">New version %1$s is available</string>
     <string name="update_title">Update available</string>
-    <string name="update_url"/>
-    <string name="update_api_key"/>
+    <string name="update_latest_version">You have latest version</string>
 </resources>

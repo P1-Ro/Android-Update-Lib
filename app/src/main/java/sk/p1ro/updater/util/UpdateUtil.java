@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.widget.Toast;
 
 import androidx.core.content.FileProvider;
 
@@ -19,6 +20,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.Duration;
 
 import sk.p1ro.updater.R;
 
@@ -31,6 +33,18 @@ public final class UpdateUtil {
 
     public static String getApiKey(Context context) {
         return context.getString(R.string.update_api_key);
+    }
+
+    public static void checkAndInstallUpdate(Context context) {
+        checkUpdate(context, shouldInstall -> {
+            if (shouldInstall) {
+                downloadUpdate(context, callback -> {
+                    installUpdate(context);
+                });
+            } else {
+                Toast.makeText(context, R.string.update_latest_version, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public static void checkUpdate(Context context, Listener<Boolean> callback) throws UpdateException {
@@ -97,7 +111,7 @@ public final class UpdateUtil {
         return info;
     }
 
-    public static void downloadUpdate(Context context, Listener<Boolean> callback) {
+    public static void downloadUpdate(Context context, Listener<Boolean> callback) throws UpdateException {
         PackageInfo info = getCurrentAppInfo(context);
         new Thread(() -> {
             try {
