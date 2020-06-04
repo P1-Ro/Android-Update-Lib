@@ -7,7 +7,7 @@ Easy to setup library for [Android-Update-Server](https://github.com/P1-Ro/Andro
 1. Set-up your own instance of [Android-Update-Server](https://github.com/P1-Ro/Android-Update-Server)
 2. [Click here](https://jitpack.io/#P1-Ro/Android-Update-Lib)  and follow instruction how to include library into your project
 3. Add `classpath 'com.google.gms:google-services:4.3.3'` into your top level `build.gradle` dependencies.  Like this:
-```
+```groovy
 buildscript {  
   
   repositories { ... }  
@@ -19,10 +19,10 @@ buildscript {
 }
 ```
 
-4. Add `apply plugin: 'com.google.gms.google-services'` to bottom of your `build.gradle` inside `app` folder
+4.  Add `apply plugin: 'com.google.gms.google-services'` to bottom of your `build.gradle` inside `app` folder
 5. Add `google-services.json` to your `app` directory
 6. Set `url` and `apiKey` of your server in your `strings.xml`
-```
+```xml
 <string name="update_url" translatable="false">URL_HERE</string>  
 <string name="update_api_key" translatable="false">API_KEY_HERE</string>
 ```
@@ -30,7 +30,7 @@ buildscript {
 ## Initialization
 
 Initialize the Updater in your application’s main `onCreate` method:
-```
+```java
 import sk.p1ro.Updater;
 
 public class MainApplication extends Application {
@@ -52,14 +52,14 @@ If you want to allow user to check for updates themselves you can have two optio
 
 #### Option 1
 Install update automatically right after check like this:
-```
+```java
 Button button = findViewById(R.id.updateButton);
 button.setOnClickListener(e -> UpdateUtil.checkAndInstallUpdate(this))
 ```
 
 #### Option 2
 You can control individual step when to do one of update steps :
-```
+```java
 public static void checkAndInstallUpdate(Context context) {
 	checkUpdate(context, shouldInstall -> {
 		if (shouldInstall) {
@@ -77,7 +77,7 @@ public static void checkAndInstallUpdate(Context context) {
 
 ## Customization
 If you want to translate messages you can do so by overriding following strings in your `strings.xml`
-```
+```xml
 <string name="update_check">Checking updates</string>  
 <string name="update_wait_please">This can take a while…</string>  
 <string name="update_version">New version %1$s is available</string>  
