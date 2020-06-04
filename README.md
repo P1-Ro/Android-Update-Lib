@@ -60,18 +60,18 @@ button.setOnClickListener(e -> UpdateUtil.checkAndInstallUpdate(this))
 #### Option 2
 You can control individual step when to do one of update steps :
 ```java
-public static void checkAndInstallUpdate(Context context) {
-	checkUpdate(context, shouldInstall -> {
-		if (shouldInstall) {
-		
-			// you can display some dialog here
-			downloadUpdate(context, callback -> {
-			
-				// you can display some dialog here
-				installUpdate(context);
-			});
-		}
-	});
+public static void installUpdate(Context context) {
+    checkUpdate(context, shouldInstall -> {
+        if (shouldInstall) {
+
+            // you can display some dialog here
+            downloadUpdate(context, callback -> {
+
+                // you can display some dialog here
+                installUpdate(context);
+            });
+        }
+    });
 }
 ```
 
