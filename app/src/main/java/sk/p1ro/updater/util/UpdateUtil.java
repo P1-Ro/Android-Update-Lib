@@ -22,6 +22,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
 
+import sk.p1ro.updater.BuildConfig;
 import sk.p1ro.updater.R;
 
 
@@ -147,7 +148,7 @@ public final class UpdateUtil {
         Uri fileUri = Uri.fromFile(file);
 
         if (Build.VERSION.SDK_INT >= 24) {
-            fileUri = FileProvider.getUriForFile(context, "sk.p1ro.updater.apks", file);
+            fileUri = FileProvider.getUriForFile(context, context.getPackageName() + ".apks", file);
         }
         Intent intent = new Intent(Intent.ACTION_VIEW, fileUri);
         intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);

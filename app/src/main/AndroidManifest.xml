@@ -27,7 +27,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="sk.p1ro.updater.apks"
+            android:authorities="${applicationId}.apks"
             android:exported="false"
             android:grantUriPermissions="true"
             tools:node="merge">
