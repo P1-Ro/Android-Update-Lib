@@ -1,31 +1,32 @@
 
-# Android-Update-Lib [![](https://jitpack.io/v/P1-Ro/Android-Update-Lib.svg)](https://jitpack.io/#P1-Ro/Android-Update-Lib)  
+# Android-Update-Lib [![](https://jitpack.io/v/P1-Ro/Android-Update-Lib.svg)](https://jitpack.io/#P1-Ro/Android-Update-Lib) [![](https://jitci.com/gh/P1-Ro/Android-Update-Lib/svg)](https://jitci.com/gh/P1-Ro/Android-Update-Lib)  
   
 Easy to setup library for [Android-Update-Server](https://github.com/P1-Ro/Android-Update-Server) that manages updates for your Android app which cannot be distributed via Google Play or you just simply don't want to use it.
 
 ## Installation
-1. Set-up your own instance of [Android-Update-Server](https://github.com/P1-Ro/Android-Update-Server)
-2. [Click here](https://jitpack.io/#P1-Ro/Android-Update-Lib)  and follow instruction how to include library into your project
-3. Add `classpath 'com.google.gms:google-services:4.3.3'` into your top level `build.gradle` dependencies.  Like this:
-```groovy
-buildscript {  
-  
-  repositories { ... }  
- 
-  dependencies {  
-    ...
-    classpath 'com.google.gms:google-services:4.3.3'  
-  }  
-}
-```
-
-4.  Add `apply plugin: 'com.google.gms.google-services'` to bottom of your `build.gradle` inside `app` folder
-5. Add `google-services.json` to your `app` directory
-6. Set `url` and `apiKey` of your server in your `strings.xml`
-```xml
-<string name="update_url" translatable="false">URL_HERE</string>  
-<string name="update_api_key" translatable="false">API_KEY_HERE</string>
-```
+1. Set-up your own instance of [Android-Update-Server](https://github.com/P1-Ro/Android-Update-Server)  
+2. Add Android App to same Firebas project which you are using for Update Server  
+3. Include this library in your project
+4. Add it to your build.gradle with:
+    ```gradle
+	allprojects {
+	    repositories {
+	        maven { url "https://jitpack.io" }
+	    }
+	}
+	```
+      and:
+      
+    ```gradle
+   dependencies {
+       compile 'com.github.P1-Ro:Android-Update-Lib:1.1.0'
+	}
+	 ```
+5. Set `url` and `apiKey` of your server in your `strings.xml`  
+```xml  
+<string name="update_url" translatable="false">URL_HERE</string>
+<string name="update_api_key" translatable="false">API_KEY_HERE</string>  
+```  
 
 ## Initialization
 
