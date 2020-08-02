@@ -28,6 +28,6 @@ android {
 
 dependencies {
     implementation 'com.google.firebase:firebase-messaging:20.2.3'
-    implementation 'androidx.work:work-runtime:2.4.4'
+    implementation 'androidx.work:work-runtime:2.4.0'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.9'
 }
