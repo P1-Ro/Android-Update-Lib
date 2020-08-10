@@ -5,7 +5,7 @@ Easy to setup library for [Android-Update-Server](https://github.com/P1-Ro/Andro
 
 ## Installation
 1. Set-up your own instance of [Android-Update-Server](https://github.com/P1-Ro/Android-Update-Server)  
-2. Add Android App to same Firebas project which you are using for Update Server  
+2. Add Android App to same Firebase project which you are using for Update Server  
 3. Include this library in your project
 4. Add it to your build.gradle with:
     ```gradle
@@ -19,7 +19,7 @@ Easy to setup library for [Android-Update-Server](https://github.com/P1-Ro/Andro
       
     ```gradle
    dependencies {
-       compile 'com.github.P1-Ro:Android-Update-Lib:1.1.0'
+       implementation 'com.github.P1-Ro:Android-Update-Lib:1.1.0'
 	}
 	 ```
 5. Set `url` and `apiKey` of your server in your `strings.xml`  
